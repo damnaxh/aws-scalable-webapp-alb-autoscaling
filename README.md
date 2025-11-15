@@ -38,29 +38,29 @@ This project demonstrates how to deploy a highly available and scalable web appl
 Includes User Data:
 
 bash
-``-#!/bin/bash
--sudo yum update -y
--sudo yum install httpd -y
--sudo systemctl start httpd
--sudo systemctl enable httpd
--echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html``
+``#!/bin/bash
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html``
 
 ### 3. Create Target Group
    
-- **Target type: Instances
+- Target type: Instances
 - Port: 80
 - Health check: HTTP /
 
 ### 4. Create Application Load Balancer
    
-Scheme: Internet-facing
-Listener: HTTP : 80 → Forward to Target Group
+-Scheme: Internet-facing
+-Listener: HTTP : 80 → Forward to Target Group
 
 ### 5. Create Auto Scaling Group
-Min: 2
-Desired: 2
-Max: 4
-Scaling policy: CPU target tracking
+-Min: 2
+-Desired: 2
+-Max: 4
+-Scaling policy: CPU target tracking
 
 
 ```

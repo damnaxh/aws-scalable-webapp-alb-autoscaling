@@ -34,27 +34,29 @@ This project demonstrates how to deploy a highly available and scalable web appl
 - `web-sg`: Allow HTTP(80), SSH(22)
 - `alb-sg`: Allow HTTP(80)
 
- Create Launch Template
+### 2. Create Launch Template
 Includes User Data:
 
 bash
-`#!/bin/bash`
-`sudo yum update -y`
-`sudo yum install httpd -y`
-`sudo systemctl start httpd`
-`sudo systemctl enable httpd`
-`echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html`
+`#!/bin/bash
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html`
 
-3. Create Target Group
+### 3. Create Target Group
+   
 Target type: Instances
 Port: 80
 Health check: HTTP /
 
-4. Create Application Load Balancer
+### 4. Create Application Load Balancer
+   
 Scheme: Internet-facing
 Listener: HTTP : 80 → Forward to Target Group
 
-5. Create Auto Scaling Group
+### 5. Create Auto Scaling Group
 Min: 2
 Desired: 2
 Max: 4

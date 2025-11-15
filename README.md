@@ -44,8 +44,8 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html
 
+3. Create Target Group
 
-### 4.Create Target Group
 Target type: Instances
 
 Port: 80
@@ -53,11 +53,13 @@ Port: 80
 Health check: HTTP /
 
 4. Create Application Load Balancer
+
 Scheme: Internet-facing
 
 Listener: HTTP : 80 → Forward to Target Group
 
 5. Create Auto Scaling Group
+
 Min: 2
 
 Desired: 2
@@ -66,23 +68,6 @@ Max: 4
 
 Scaling policy: CPU target tracking
 
-✔ Testing Auto Scaling
-SSH into an instance and run:
-
-bash
-Copy code
-sudo yum install stress -y
-stress --cpu 4 --timeout 200
-Auto Scaling Group should launch new instances automatically.
-
-📁 Project Benefits
-Highly available
-
-Fault tolerant
-
-Automatically scalable
-
-Flexible and cloud-ready
 
 📷 Architecture Diagram
                  ┌────────────────────────────┐

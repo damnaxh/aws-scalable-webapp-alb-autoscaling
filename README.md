@@ -56,6 +56,8 @@ echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html
    
 - Scheme: Internet-facing
 - Listener: HTTP : 80 → Forward to Target Group
+- <img width="1349" height="540" alt="image" src="https://github.com/user-attachments/assets/d99c2ffb-957d-44fe-986b-992e9a5cca6d" />
+
 
 ### 5. Create Auto Scaling Group
 - Min: 2

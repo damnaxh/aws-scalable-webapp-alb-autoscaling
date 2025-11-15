@@ -3,8 +3,9 @@
 This project demonstrates how to deploy a highly available and scalable web application on AWS using EC2, Application Load Balancer (ALB), and Auto Scaling Group (ASG).
 
 ---
+```
 📷 Architecture Diagram
-                 `┌────────────────────────────┐
+                 ┌────────────────────────────┐
                  │      Users / Clients       │
                  └──────────────┬─────────────┘
                                 │  HTTP (80)
@@ -26,8 +27,8 @@ This project demonstrates how to deploy a highly available and scalable web appl
 └──────────────┘       └──────────────┘         └──────────────┘
         ▲                         ▲                         ▲
         └────────────── Auto Scaling Group ──────────────────┘
-                          (Min=2, Max=4)`
-
+                          (Min=2, Max=4)
+---
 ## 📌 Architecture Overview
 
 - **Application Load Balancer** distributes incoming traffic.

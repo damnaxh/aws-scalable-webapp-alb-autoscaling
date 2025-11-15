@@ -38,7 +38,7 @@ This project demonstrates how to deploy a highly available and scalable web appl
 Includes User Data:
 
 bash
-``#!/bin/bash
+``**#!/bin/bash**
 sudo yum update -y
 sudo yum install httpd -y
 sudo systemctl start httpd
@@ -47,7 +47,7 @@ echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html``
 
 ### 3. Create Target Group
    
-Target type: Instances
+**Target type: Instances**
 Port: 80
 Health check: HTTP /
 

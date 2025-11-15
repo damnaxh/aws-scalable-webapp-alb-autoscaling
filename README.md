@@ -47,9 +47,9 @@ echo "<h1>Hello from $(hostname)</h1>" > /var/www/html/index.html``
 
 ### 3. Create Target Group
    
-**Target type: Instances**
-Port: 80
-Health check: HTTP /
+- **Target type: Instances
+- Port: 80
+- Health check: HTTP /
 
 ### 4. Create Application Load Balancer
    
